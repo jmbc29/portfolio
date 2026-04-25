@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Ethereum Blockchain Wallet Behavior Analysis (ChainSense)",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Engineered 9 behavioral features from 109,000+ raw Ethereum transactions, clustering 1,000 wallet addresses using HDBSCAN with PCA and LDA dimensionality reduction."
+    },
+    {
+        "title": "Phone Jail Cell Build Project (LockedIn)",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Collaborated on an 11-person team to design a phone-jail combining physical hardware and Arduino C++ firmware with a web-based task management system."
+    },
+    {
+        "title": "Rubik's Cube Solve Time Analyzer (SolveStat)",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built a full-stack web application using React and FastAPI to parse and analyze csTimer CSV files with 10,000+ solve times and interactive Chart.js visualizations."
+    },
+    {
+        "title": "Foreign Exchange Market Trading Analysis",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Analyzed 500+ Forex trades on Major Forex Pairs using structured Excel trading journals, applying Wyckoff theory and risk management frameworks."
+    },
+    {
+        "title": "Data Visualization Portfolio Site",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built a personal portfolio website from scratch using HTML, CSS, and JavaScript with dark mode, dynamic navigation, and GitHub API integration."
+    },
+    {
+        "title": "Western Blot Protein Analysis",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quantified Western blot band intensities across 150+ protein samples using ImageJ-based image analysis to generate quantitative experimental datasets."
+    },
+    {
+        "title": "SQL Database Management Project",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Designed and queried relational databases using MySQL and PostgreSQL for data analysis and reporting tasks."
+    },
+    {
+        "title": "Machine Learning Classification Project",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Built classification models using Scikit-learn with feature engineering, cross-validation, and performance evaluation on real-world datasets."
+    },
+    {
+        "title": "Data Analysis with Pandas",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Performed exploratory data analysis and visualization using pandas, NumPy, and Matplotlib on structured datasets."
+    },
+    {
+        "title": "Interactive Dashboard with Plotly",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Created interactive data visualizations and dashboards using Plotly and FastAPI to display real-time analytics."
+    },
+    {
+        "title": "Science Tutoring Curriculum Development",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Designed lesson material and taught natural science and computer science to grades 8-10 students through weekly online classes of approximately 15 students."
+    },
+    {
+        "title": "Competitive Cubing Performance Tracker",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tracked and analyzed competitive Rubik's Cube solving performance across WCA competitions, earning 7 silver and 7 bronze medals."
+    }
+]
