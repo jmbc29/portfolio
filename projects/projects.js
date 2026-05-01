@@ -14,6 +14,7 @@ const colors = d3.scaleOrdinal(d3.schemeTableau10);
 const arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 
 let selectedIndex = -1;
+let currentProjects = projects;
 
 function renderPieChart(projectsGiven) {
     svg.selectAll('path').remove();
@@ -52,10 +53,10 @@ function renderPieChart(projectsGiven) {
                 );
 
                 if (selectedIndex === -1) {
-                    renderProjects(projects, projectsContainer, 'h2');
+                    renderProjects(currentProjects, projectsContainer, 'h2');
                 } else {
                     const selectedYear = data[selectedIndex].label;
-                    const filtered = projects.filter((p) => p.year === selectedYear);
+                    const filtered = currentProjects.filter((p) => p.year === selectedYear);
                     renderProjects(filtered, projectsContainer, 'h2');
                 }
             });
@@ -78,11 +79,11 @@ searchInput.addEventListener('input', (event) => {
     const query = event.target.value.toLowerCase();
     selectedIndex = -1;
 
-    const filteredProjects = projects.filter((project) => {
+    currentProjects = projects.filter((project) => {
         const values = Object.values(project).join('\n').toLowerCase();
         return values.includes(query);
     });
 
-    renderProjects(filteredProjects, projectsContainer, 'h2');
-    renderPieChart(filteredProjects);
+    renderProjects(currentProjects, projectsContainer, 'h2');
+    renderPieChart(currentProjects);
 });
