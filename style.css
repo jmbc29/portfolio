@@ -236,10 +236,15 @@ svg:has(path:hover) path:not(:hover) {
 }
 
 .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-    gap: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
     margin-block: 2em;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
 }
 
 .stats dt {

@@ -42,23 +42,20 @@ function processCommits(data) {
 function renderCommitInfo(data, commits) {
     const dl = d3.select('#stats').append('dl').attr('class', 'stats');
 
-    dl.append('dt').text('Total commits');
-    dl.append('dd').text(commits.length);
+    const stats = [
+        { label: 'Total commits', value: commits.length },
+        { label: 'Total LOC', value: data.length },
+        { label: 'Number of files', value: d3.group(data, (d) => d.file).size },
+        { label: 'Max file length (lines)', value: d3.max(data, (d) => d.line) },
+        { label: 'Avg line length (chars)', value: Math.round(d3.mean(data, (d) => d.length)) },
+        { label: 'Max depth', value: d3.max(data, (d) => d.depth) },
+    ];
 
-    dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
-    dl.append('dd').text(data.length);
-
-    dl.append('dt').text('Number of files');
-    dl.append('dd').text(d3.group(data, (d) => d.file).size);
-
-    dl.append('dt').text('Max file length (lines)');
-    dl.append('dd').text(d3.max(data, (d) => d.line));
-
-    dl.append('dt').text('Average line length (chars)');
-    dl.append('dd').text(Math.round(d3.mean(data, (d) => d.length)));
-
-    dl.append('dt').text('Max depth');
-    dl.append('dd').text(d3.max(data, (d) => d.depth));
+    for (const { label, value } of stats) {
+        const div = dl.append('div');
+        div.append('dt').text(label);
+        div.append('dd').text(value);
+    }
 }
 
 function renderTooltipContent(commit) {
@@ -89,7 +86,6 @@ function updateTooltipPosition(event) {
     tooltip.style.top = `${event.clientY + 10}px`;
 }
 
-// Declare scales outside so brushed() can access them
 let xScale, yScale;
 
 function isCommitSelected(selection, commit) {
@@ -169,7 +165,6 @@ function renderScatterPlot(data, commits) {
         .domain([0, 24])
         .range([usableArea.bottom, usableArea.top]);
 
-    // Gridlines BEFORE axes
     const gridlines = svg
         .append('g')
         .attr('class', 'gridlines')
@@ -179,7 +174,6 @@ function renderScatterPlot(data, commits) {
         d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width)
     );
 
-    // Axes
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3
         .axisLeft(yScale)
@@ -195,7 +189,6 @@ function renderScatterPlot(data, commits) {
         .attr('transform', `translate(${usableArea.left}, 0)`)
         .call(yAxis);
 
-    // Dots
     const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
     const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
 
@@ -223,7 +216,6 @@ function renderScatterPlot(data, commits) {
             updateTooltipVisibility(false);
         });
 
-    // Brush
     function brushed(event) {
         const selection = event.selection;
         d3.selectAll('circle').classed('selected', (d) =>
@@ -237,7 +229,6 @@ function renderScatterPlot(data, commits) {
     svg.selectAll('.dots, .overlay ~ *').raise();
 }
 
-// Main
 const data = await loadData();
 const commits = processCommits(data);
 renderCommitInfo(data, commits);
