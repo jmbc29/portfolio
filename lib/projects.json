@@ -70,5 +70,12 @@
         "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Tracked and analyzed competitive Rubik's Cube solving performance across WCA competitions, earning 7 silver and 7 bronze medals."
+    },
+    {
+        "title": "Bikewatching",
+        "year": "2026",
+        "image": "images/bikewatching.png",
+        "description": "An interactive geospatial visualization of Bluebikes bike share traffic in the Boston area, built with Mapbox and D3.",
+        "url": "https://YOUR_GITHUB_USERNAME.github.io/bikewatching/"
     }
 ]
